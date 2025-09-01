@@ -182,3 +182,4 @@ C:\Development\2025_Side_Project\LoreKeeper\LoreKeeper.Crawler\obj\Debug\net9.0\
 C:\Development\2025_Side_Project\LoreKeeper\LoreKeeper.Crawler\obj\Debug\net9.0\LoreKeeper.Crawler.pdb
 C:\Development\2025_Side_Project\LoreKeeper\LoreKeeper.Crawler\obj\Debug\net9.0\LoreKeeper.Crawler.genruntimeconfig.cache
 C:\Development\2025_Side_Project\LoreKeeper\LoreKeeper.Crawler\obj\Debug\net9.0\ref\LoreKeeper.Crawler.dll
+C:\Development\2025_Side_Project\LoreKeeper\LoreKeeper.Crawler\bin\Debug\net9.0\appsettings.json

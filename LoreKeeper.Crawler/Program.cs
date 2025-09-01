@@ -1,26 +1,26 @@
 ﻿using System.Net.Http.Headers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
 using LoreKeeper.Core;
 using LoreKeeper.Storage;
-using LoreKeeper.Crawler; // <-- make sure this matches CrawlService namespace
+using LoreKeeper.Crawler;
 
 var builder = Host.CreateApplicationBuilder(args);
 
-// Config
-var wikis = new[]
-{
-    "https://defiance-of-the-fall.fandom.com",
-    "https://martial-world.fandom.com",
-    "https://true-mw.fandom.com"
-};
-builder.Services.AddSingleton(new CrawlerConfig
-{
-    Wikis = wikis,
-    SeedCategory = "Category:Main",
-    DelayMsBetweenCalls = 250
-});
+// Bind config
+var crawlerConfig = builder.Configuration
+    .GetSection("Crawler")
+    .Get<CrawlerConfig>() ?? new CrawlerConfig();
 
+var storageConfig = builder.Configuration
+    .GetSection("Storage")
+    .Get<StorageConfig>() ?? new StorageConfig();
+
+builder.Services.AddSingleton(crawlerConfig);
+builder.Services.AddSingleton(storageConfig);
+
+// HttpClient with resilience
 builder.Services.AddHttpClient("wiki", client =>
     {
         client.DefaultRequestHeaders.UserAgent.Clear();
@@ -31,11 +31,9 @@ builder.Services.AddHttpClient("wiki", client =>
     {
         options.Retry.MaxRetryAttempts = 5;
         options.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(120);
-        // defaults for circuit breaker/timeout are sensible; tweak later if needed
     });
 
-// Storage
-builder.Services.AddSingleton(new StorageConfig { ConnectionString = "Data Source=./data/lorekeeper.db" });
+// Storage + Repos
 builder.Services.AddSingleton<IDbBootstrapper, SqliteBootstrapper>();
 builder.Services.AddSingleton<IPagesRepository, PagesRepository>();
 
