@@ -1,12 +1,4 @@
-﻿using System.Net.Http.Headers;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
-using LoreKeeper.Core;
-using LoreKeeper.Storage;
-using LoreKeeper.Crawler;
-
-var builder = Host.CreateApplicationBuilder(args);
+﻿var builder = Host.CreateApplicationBuilder(args);
 
 // Bind config
 var crawlerConfig = builder.Configuration
@@ -39,5 +31,7 @@ builder.Services.AddSingleton<IPagesRepository, PagesRepository>();
 
 // Hosted service
 builder.Services.AddHostedService<CrawlService>();
+builder.Services.AddHostedService<CategoryDiscoveryService>();
+
 
 await builder.Build().RunAsync();
