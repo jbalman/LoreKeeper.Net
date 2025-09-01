@@ -76,3 +76,26 @@ desktop.ini
 *.swo
 *.tmp
 *.temp
+
+
+# .NET runtime/config
+*.deps.json
+*.runtimeconfig.json
+*.svclog
+*.generated.cs
+
+# Test / coverage
+*.trx
+TestResults/
+coverage*.json
+coverage*.xml
+lcov.info
+
+# Editor / tooling
+.history/
+.ionide/
+*.code-workspace
+
+# Publish / deployment
+*.publishsettings
+*.Publish.xml
