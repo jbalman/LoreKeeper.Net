@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoreKeeper.Crawler")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0acba2127b2624e06f9550cdba823709bd6213cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e2169823fe7147c528216f06c66a65e6b12b5b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoreKeeper.Crawler")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoreKeeper.Crawler")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
