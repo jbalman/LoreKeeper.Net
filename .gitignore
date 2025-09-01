@@ -1,0 +1,78 @@
+# ========================
+# .NET build artifacts
+# ========================
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+[Tt]estResults/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+*.vspscc
+*.user
+*.suo
+*.tmp
+*.dbmdl
+*.bak
+*.ncb
+*.opendb
+*.VC.db
+*.vscode/
+
+# Coverage / testing
+*.coverage
+*.coveragexml
+*.TestResults.xml
+*.VisualState.xml
+TestResult.xml
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+project.lock.json
+artifacts/
+packages/
+.nuget/
+# (allow global.json but ignore NuGet config)
+!global.json
+
+# Rider / JetBrains IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Rider local history, caches, indexes
+.idea/.idea.*
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/contentModel.xml
+.idea/**/modules.xml
+.idea/**/riderModule.iml
+
+# VS-related (if someone opens in Visual Studio)
+.vs/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs
+*.log
+*.tlog
+
+# Other temp
+*.swp
+*.swo
+*.tmp
+*.temp
